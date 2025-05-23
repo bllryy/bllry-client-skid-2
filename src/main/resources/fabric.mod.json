@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "sydney",
+	"version": "${version}",
+	"name": "bllry-client",
+	"description": "Minecraft utility mod aimed at anarchy servers, giving you useful features for combat and utility.",
+	"authors": [
+		"bllry"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/sydney/icon.png",
+	"environment": "*",
+	"accessWidener" : "sydney.accesswidener",
+	"entrypoints": {
+		"main": [
+          "me.lily.bllry.Bllry"
+		]
+	},
+	"mixins": [
+		"sydney.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
