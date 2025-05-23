@@ -23,7 +23,7 @@ public class FontManager implements IMinecraft {
     private FontRenderer fontRenderer;
 
     public void drawText(DrawContext context, String text, int x, int y, Color color) {
-        if (Bllry.MODULE_MANAGER.getModule(FontModule.class).isToggled() && Bllry.MODULE_MANAGER.getModule(FontModule.class).customFont.getValue() && fontRenderer != null) {
+        if (Bllry.MODULE_MANAGER.getModule(FontModule.class).isToggled() && Bllry.MODULE_MANAGER.getModule(FontModule.class).customFont.getValue() && fontRenderer != null) { // != null
             fontRenderer.drawString(context.getMatrices(), text, x, y, color.getRGB(), false);
         } else {
             context.drawText(mc.textRenderer, text, x, y, color.getRGB(), false);
@@ -31,7 +31,7 @@ public class FontManager implements IMinecraft {
     }
 
     public void drawTextWithShadow(DrawContext context, String text, int x, int y, Color color) {
-        if (Bllry.MODULE_MANAGER.getModule(FontModule.class).isToggled() && Bllry.MODULE_MANAGER.getModule(FontModule.class).customFont.getValue() && fontRenderer != null) {
+        if (Bllry.MODULE_MANAGER.getModule(FontModule.class).isToggled() && Bllry.MODULE_MANAGER.getModule(FontModule.class).customFont.getValue() && fontRenderer != null) { // != null
             if (!Bllry.MODULE_MANAGER.getModule(FontModule.class).shadowMode.getValue().equalsIgnoreCase("None")) fontRenderer.drawString(context.getMatrices(), text, x + getShadowOffset(), y + getShadowOffset(), color.getRGB(), true);
             fontRenderer.drawString(context.getMatrices(), text, x, y, color.getRGB(), false);
         } else {

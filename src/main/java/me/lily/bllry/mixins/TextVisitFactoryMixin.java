@@ -27,39 +27,8 @@ public class TextVisitFactoryMixin implements IMinecraft {
 
     @ModifyVariable(method = "visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z", at = @At("HEAD"), ordinal = 0, argsOnly = true)
     private static String replaceText(String value) {
-        try {
-            // Check if the module manager is initialized
-            if (Bllry.MODULE_MANAGER == null) {
-                return value;
-            }
-
-            // Get the module
-            NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
-            if (module == null) {
-                return value;
-            }
-
-            // Check if module is enabled (try different method names based on your module system)
-            if (!module.isToggled()) { // Change this to: module.isEnabled() or module.getState() as needed
-                return value;
-            }
-
-            // Check if Minecraft client is available
-            if (mc == null || mc.getSession() == null) {
-                return value;
-            }
-
-            // Get the name value (try different method names based on your StringSetting)
-            String nameValue = module.name.getValue(); // Change this to: module.name.get() or module.name.value as needed
-            if (nameValue == null || nameValue.isEmpty()) {
-                return value;
-            }
-
-            return value.replaceAll(mc.getSession().getUsername(), nameValue);
-
-        } catch (Exception e) {
-            // If anything goes wrong, just return the original value to prevent crashes
-            return value;
-        }
+        NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
+        if (module.isToggled()) return value.replaceAll(mc.getSession().getUsername(), module.name.getValue());
+        return value;
     }
 }
