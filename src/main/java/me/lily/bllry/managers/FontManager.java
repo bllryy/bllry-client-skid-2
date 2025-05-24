@@ -112,7 +112,8 @@ public class FontManager implements IMinecraft {
 
     public int getWidth(String text) {
         if (Bllry.MODULE_MANAGER.getModule(FontModule.class).isToggled() && Bllry.MODULE_MANAGER.getModule(FontModule.class).customFont.getValue() && fontRenderer != null) {
-            return (int) fontRenderer.getTextWidth(text) + Bllry.MODULE_MANAGER.getModule(FontModule.class).widthOffset.getValue().intValue();
+            return (int) fontRenderer.getTextWidth(Text.literal(text).asOrderedText()) + Bllry.MODULE_MANAGER.getModule(FontModule.class).widthOffset.getValue().intValue();
+
         } else {
             return mc.textRenderer.getWidth(text);
         }
@@ -140,4 +141,6 @@ public class FontManager implements IMinecraft {
         for (String fontName : GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames()) if (fontName.equalsIgnoreCase(name)) return true;
         return false;
     }
+
+
 }

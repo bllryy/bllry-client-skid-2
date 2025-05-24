@@ -9,7 +9,6 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import lombok.SneakyThrows;
 import me.lily.bllry.Bllry;
 import me.lily.bllry.modules.impl.core.FontModule;
-import me.lily.bllry.modules.impl.miscellaneous.NameProtectModule;
 import me.lily.bllry.utils.IMinecraft;
 import net.minecraft.client.gl.ShaderProgramKeys;
 import net.minecraft.client.render.*;
@@ -160,22 +159,22 @@ public class FontRenderer implements Closeable, IMinecraft {
         matrices.pop();
     }
 
-    public float getTextWidth(String text) {
-        NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
-        if (module.isToggled()) text = text.replaceAll(mc.getSession().getUsername(), module.name.getValue());
-
-        char[] characters = stripControlCodes(text).toCharArray();
-        float width = 0;
-
-        for (char ch : characters) {
-            Glyph glyph = locateGlyph(ch);
-            if (glyph != null) {
-                width += glyph.width() / (float) this.multiplier;
-            }
-        }
-
-        return Math.max(width, 0);
-    }
+//    public float getTextWidth(String text) {
+//        NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
+//        if (module.isToggled()) text = text.replaceAll(mc.getSession().getUsername(), module.name.getValue());
+//
+//        char[] characters = stripControlCodes(text).toCharArray();
+//        float width = 0;
+//
+//        for (char ch : characters) {
+//            Glyph glyph = locateGlyph(ch);
+//            if (glyph != null) {
+//                width += glyph.width() / (float) this.multiplier;
+//            }
+//        }
+//
+//        return Math.max(width, 0);
+//    }
 
     public float getTextWidth(OrderedText text) {
         float[] dimensions = new float[2];

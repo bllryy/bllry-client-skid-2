@@ -5,7 +5,6 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import me.lily.bllry.Bllry;
-import me.lily.bllry.modules.impl.miscellaneous.NameProtectModule;
 import me.lily.bllry.utils.IMinecraft;
 import me.lily.bllry.utils.text.CustomFormatting;
 import me.lily.bllry.utils.text.FormattingUtils;
@@ -25,10 +24,10 @@ public class TextVisitFactoryMixin implements IMinecraft {
         return original.call(instance, index);
     }
 
-    @ModifyVariable(method = "visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z", at = @At("HEAD"), ordinal = 0, argsOnly = true)
-    private static String replaceText(String value) {
-        NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
-        if (module.isToggled()) return value.replaceAll(mc.getSession().getUsername(), module.name.getValue());
-        return value;
-    }
+//    @ModifyVariable(method = "visitFormatted(Ljava/lang/String;ILnet/minecraft/text/Style;Lnet/minecraft/text/Style;Lnet/minecraft/text/CharacterVisitor;)Z", at = @At("HEAD"), ordinal = 0, argsOnly = true)
+//    private static String replaceText(String value) {
+//        NameProtectModule module = Bllry.MODULE_MANAGER.getModule(NameProtectModule.class);
+//        if (module.isToggled()) return value.replaceAll(mc.getSession().getUsername(), module.name.getValue());
+//        return value;
+//    }
 }

@@ -75,6 +75,7 @@ public class Bllry implements ModInitializer {
 
 		MODULE_MANAGER = new ModuleManager();
 		COMMAND_MANAGER = new CommandManager();
+
 	}
 
 	public static void onPostInitialize() {
