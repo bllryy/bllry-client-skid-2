@@ -18,7 +18,7 @@ public class RPCModule extends Module {
     public ModeSetting detailsMode = new ModeSetting("Details", "The mode for the discord presence details.", "Random", new String[]{"Custom", "Activity", "Random"});
     public StringSetting customDetails = new StringSetting("CustomDetails", "The custom text to use in the discord presence details.", new ModeSetting.Visibility(detailsMode, "Custom"), "margielaware.cc");
 
-    private final String[] DETAILS = {"violently edging", "those who know", "getting money", "currently drinking and driving", "悉尼客户万岁", "jonking my shi", "FxckYouBxtchNxgga", "Playing 2b2t.pe", "batemanhook uid 3", "Abusing Fentanyl", "margielaware.cc", "richest person alive", "my richness powered by Bllry", "#hitmaker #trendsetter", "#beamer", "merry switchmas", "surf gang @ da beach +_+"};
+    private final String[] DETAILS = {"UwU", "OwO", "X3", ":3"};
 
     private final RichPresence rpc = new RichPresence();
     private final Timer imageTimer = new Timer();

@@ -26,7 +26,7 @@ public class ModuleManager implements IMinecraft {
         Bllry.EVENT_HANDLER.subscribe(this);
 
         try {
-            for (Class<?> clazz : new Reflections("me.aidan.sydney.modules.impl").getSubTypesOf(Module.class)) {
+            for (Class<?> clazz : new Reflections("me.lily.bllry.modules.impl").getSubTypesOf(Module.class)) {
                 if (clazz.getAnnotation(RegisterModule.class) == null) continue;
                 Module module = (Module) clazz.getDeclaredConstructor().newInstance();
 

@@ -57,7 +57,9 @@ public class MainMenuScreen extends Screen implements IMinecraft {
         }
 
         // Watermark
-        drawText(context, Formatting.WHITE + "Syd" + Formatting.RESET + "ney", width/2f - Bllry.FONT_MANAGER.getWidth("Bllry"), height/2f - Bllry.FONT_MANAGER.getHeight()*2 - 5, 2, ColorUtils.getRainbow(2L, 0.7f, 1.0f, 255, width/2*5L));
+        drawText(context, Formatting.WHITE + "bll" + Formatting.RESET + "ry", width/2f - Bllry.FONT_MANAGER.getWidth("Bllry"), height/2f - Bllry.FONT_MANAGER.getHeight()*2 - 5, 2, ColorUtils.getRainbow(2L, 0.7f, 1.0f, 255, width/2*5L));
+        // "bll" "ry"
+
 
         // Time
         String date = new SimpleDateFormat("MM/dd/yy").format(new Date()) + " " + new SimpleDateFormat("hh:mm aa").format(new Date());
@@ -82,7 +84,7 @@ public class MainMenuScreen extends Screen implements IMinecraft {
         if(button == 0) {
             if(width/2f - Bllry.FONT_MANAGER.getWidth("Bllry") <= mouseX && height/2f - Bllry.FONT_MANAGER.getHeight()*2 - 5 <= mouseY && width/2f + Bllry.FONT_MANAGER.getWidth("Bllry") > mouseX && height/2f - 5 > mouseY) {
                 try {
-                    Util.getOperatingSystem().open(new URI("https://youtu.be/INE4RacaApQ?si=ShQU8VjfpgdxW8nb"));
+                    Util.getOperatingSystem().open(new URI("https://youtu.be/INE4RacaApQ?si=ShQU8VjfpgdxW8nb")); // TODO Add github
                 } catch (Exception ignored) { }
                 playClickSound();
             }
