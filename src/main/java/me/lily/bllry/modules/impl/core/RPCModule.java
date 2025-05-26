@@ -27,7 +27,7 @@ public class RPCModule extends Module {
 
     @Override
     public void onEnable() {
-        DiscordIPC.start(1306415893160661003L, null);
+        DiscordIPC.start(1376595119922216960L, null); //
         rpc.setStart(Bllry.UPTIME/1000);
         setImage();
         if(detailsMode.getValue().equals("Random")) rpc.setDetails(getDetails());
