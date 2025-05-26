@@ -1,3 +1,5 @@
-# Bllry-Client
+![bllry] (bllry-client/src/main/resources/assets/sydney/icon.png)
 
-## Need Java 21
+# Need
+- Java 21
+- fabric loader
