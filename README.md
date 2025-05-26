@@ -1,4 +1,4 @@
-![bllry] (bllry-client/src/main/resources/assets/sydney/icon.png)
+![bllry] (/src/main/resources/assets/sydney/icon.png)
 
 # Need
 - Java 21
