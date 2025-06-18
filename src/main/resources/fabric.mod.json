@@ -14,14 +14,14 @@
 	"license": "GPL-3.0",
 	"icon": "assets/sydney/icon.png",
 	"environment": "*",
-	"accessWidener" : "sydney.accesswidener",
+	"accessWidener" : "bllry.accesswidener",
 	"entrypoints": {
 		"main": [
           "me.lily.bllry.Bllry"
 		]
 	},
 	"mixins": [
-		"sydney.mixins.json"
+		"bllry.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.2",
