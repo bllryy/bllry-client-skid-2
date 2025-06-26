@@ -1,5 +1,5 @@
 # TODO
-- Add logo to discord RPC
+- Fix Mixins
 
 # Need
 - Java 21
